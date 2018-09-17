@@ -1,7 +1,8 @@
-<ag-grid-angular
-    style="width: 500px; height: 500px;"
-    class="ag-theme-material"
-    [rowData]="rowData"
-    [columnDefs]="columnDefs"
-    >
-</ag-grid-angular>
+<mat-tab-group>
+  <mat-tab label="Simple">
+    <app-simple></app-simple>
+  </mat-tab>
+  <mat-tab label="Greeting">
+    <app-greeting></app-greeting>
+  </mat-tab>
+</mat-tab-group>
