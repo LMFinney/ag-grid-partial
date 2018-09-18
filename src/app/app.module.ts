@@ -7,12 +7,16 @@ import { AgGridModule } from 'ag-grid-angular';
 import { AppComponent } from './app.component';
 import { SimpleComponent } from './simple/simple.component';
 import { GreetingComponent } from './greeting/greeting.component';
+import { TransposedComponent } from './transposed/transposed.component';
+import { TransposedDryComponent } from './transposed-dry/transposed-dry.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SimpleComponent,
-    GreetingComponent
+    GreetingComponent,
+    TransposedComponent,
+    TransposedDryComponent
   ],
   imports: [
     BrowserModule,
