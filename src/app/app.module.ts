@@ -9,6 +9,8 @@ import { SimpleComponent } from './simple/simple.component';
 import { GreetingComponent } from './greeting/greeting.component';
 import { TransposedComponent } from './transposed/transposed.component';
 import { TransposedDryComponent } from './transposed-dry/transposed-dry.component';
+import { TransposedGreetingComponent } from './transposed-greeting/transposed-greeting.component';
+import { TransposedGreetingDryComponent } from './transposed-greeting-dry/transposed-greeting-dry.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { TransposedDryComponent } from './transposed-dry/transposed-dry.componen
     SimpleComponent,
     GreetingComponent,
     TransposedComponent,
-    TransposedDryComponent
+    TransposedDryComponent,
+    TransposedGreetingComponent,
+    TransposedGreetingDryComponent
   ],
   imports: [
     BrowserModule,

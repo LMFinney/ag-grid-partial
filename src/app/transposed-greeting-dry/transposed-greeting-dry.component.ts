@@ -1,20 +1,22 @@
-import { Component } from '@angular/core';
-import { ColDef } from 'ag-grid-community';
+import { Component, OnInit } from '@angular/core';
+import { ColDef, ICellRendererParams } from 'ag-grid-community';
+import { partial } from 'lodash';
 
-import { TransposedRow } from '../app.types';
+import { Language, TransposedRow } from '../app.types';
 import { DataService } from '../data.service';
 
 @Component({
-  selector: 'app-transposed-dry',
-  templateUrl: './transposed-dry.component.html',
-  styleUrls: ['./transposed-dry.component.scss']
+  selector: 'app-transposed-greeting-dry',
+  templateUrl: './transposed-greeting-dry.component.html',
+  styleUrls: ['./transposed-greeting-dry.component.scss']
 })
-export class TransposedDryComponent {
+export class TransposedGreetingDryComponent {
   rowData: TransposedRow[];
   columnDefs: ColDef[];
 
   constructor(dataSvc: DataService) {
     const nameTranslations = dataSvc.getNameTranslations();
+    const languages = dataSvc.getLanguages();
 
     this.rowData = dataSvc.getLanguages()
       .filter((_, index) => index > 0) // we don't show english - it's the header
@@ -41,13 +43,21 @@ export class TransposedDryComponent {
       }
     ];
 
+    const cellRenderer = partial(cellRendererFn, languages);
     // use map, spread, and push to populate the rest of the columns
     this.columnDefs.push(...nameTranslations.map(translation => {
       return {
         headerName: translation.english,
         field: translation.english.toLowerCase(),
+        cellRenderer
       };
     }));
   }
 
+}
+
+function cellRendererFn(languages: Language[], params: ICellRendererParams) {
+  const rowIndex = params.rowIndex;
+  const language = languages[rowIndex + 1];
+  return `${language.greeting} ${params.value}`;
 }
