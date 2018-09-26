@@ -1,6 +1,8 @@
 # AgGridPartial
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+This is a small Angular app used to demonstrate techniques for transposing rows and columns in [ag-grid](https://www.ag-grid.com/). This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+
+You can run the app at [Stackblitz](https://stackblitz.com/github/LMFinney/ag-grid-partial) or clone it and follow the steps below. The techniques and context are described in a [video](https://www.youtube.com/watch?v=1BR9sH7zG7g) and [blog post](https://blog.oasisdigital.com/2018/transposing-rows-and-columns-in-ag-grid/).
 
 ## Development server
 
